@@ -1,8 +1,10 @@
 var React = require('react'),
     _ = require('underscore'),
+    Router = require('react-router'),
     ListingItem = require('./ListingItem.react');
 
 var Listings = React.createClass({
+    mixins: [ Router.State ],
 
     getInitialState: function() {
         return {
@@ -11,9 +13,16 @@ var Listings = React.createClass({
     },
 
     componentDidMount: function() {
-        $.getJSON('http://www.reddit.com/hot.json', function(listing) {
+        var url = "http://www.reddit.com";
+
+        if (_.isEmpty(this.getParams().subreddit)) {
+            url += '/hot.json';
+        } else {
+            url += '/r/' + this.getParams().subreddit + '/hot.json';
+        }
+
+        $.getJSON(url, function(listing) {
             if (this.isMounted()) {
-                console.log(listing.data.children);
                 this.setState({
                     listings: listing.data.children
                 });

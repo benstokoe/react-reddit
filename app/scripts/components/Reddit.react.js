@@ -26,7 +26,7 @@ var Reddit = React.createClass({
             <div>
                 <h1>Reddit {this.state.currentSub }</h1>
                 <Subreddits />
-                <Listings currentSub={this.state.currentSub} />
+                <Listings currentSub={this.state.currentSub} key={this.state.currentSub} />
             </div>
         );
     },
