@@ -1,9 +1,20 @@
-var React = require('react');
+var React = require('react'),
+    RedditApi = require('../Reddit'),
+    Subreddits = require('./Subreddits.react');
 
 var Reddit = React.createClass({
+    getInitialState: function() {
+        return {
+            currentSub: ''
+        };
+    },
+
     render: function() {
         return (
-            <h1>Reddit</h1>
+            <div>
+                <h1>Reddit</h1>
+                <Subreddits />
+            </div>
         );
     }
 });

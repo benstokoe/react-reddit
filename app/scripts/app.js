@@ -3,7 +3,7 @@
 var React = require('react'),
     Reddit = require('./components/Reddit.react');
 
-React.renderComponent(
+React.render(
     <Reddit />,
     document.getElementById("app")
 );
