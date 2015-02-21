@@ -1,11 +1,14 @@
-var React = require('react');
+var React = require('react'),
+    Router = require('react-router'),
+    Link = Router.Link;
 
 var SubredditItem = React.createClass({
+    mixins: [ Router.Navigation ],
 
     render: function() {
         return (
-            <div className="subreddit">
-                <a>{this.props.sub}</a>
+            <div key={this.props.sub} className="subreddit">
+                <Link to="subreddit" params={{subreddit: this.props.sub}}>{this.props.sub}</Link>
             </div>
         );
     }

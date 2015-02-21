@@ -10,8 +10,6 @@ var Subreddit = React.createClass({
     },
 
     componentDidMount: function() {
-        var self = this;
-
         $.getJSON('http://www.reddit.com/subreddits/popular.json', function(subreddits) {
             if (this.isMounted()) {
                 this.setState({

@@ -12,4 +12,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/";
 .subreddit {
     float: left;
     padding-right: 10px;
+
+    .active {
+        color: #f00;
+    }
 }

@@ -12,9 +12,9 @@ var $ = require('gulp-load-plugins')();
 var browserify = require('browserify');
 var watchify = require('watchify');
 var source = require('vinyl-source-stream'),
-    
+
     sourceFile = './app/scripts/app.js',
-    
+
     destFolder = './dist/scripts',
     destFileName = 'app.js';
 
@@ -48,7 +48,6 @@ gulp.task('scripts', function () {
     function rebundle() {
         return bundler.bundle()
             // log errors if they happen
-            .on('error', $.util.log.bind($.util, 'Browserify Error'))
             .pipe(source(destFileName))
             .pipe(gulp.dest(destFolder));
     }
@@ -146,10 +145,10 @@ gulp.task('watch', ['html', 'bundle', 'serve'], function () {
     // Watch .html files
     gulp.watch('app/*.html', ['html']);
 
-    
+
     // Watch .scss files
     gulp.watch('app/styles/**/*.scss', ['styles']);
-    
+
 
 
 
