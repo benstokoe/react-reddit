@@ -1,7 +1,8 @@
 var React = require('react'),
+    Router = require('react-router'),
     RedditApi = require('../Reddit'),
     Subreddits = require('./Subreddits.react'),
-    Router = require('react-router');
+    Listings = require('./Listings.react');
 
 var Reddit = React.createClass({
     mixins: [ Router.State ],
@@ -24,7 +25,8 @@ var Reddit = React.createClass({
         return (
             <div>
                 <h1>Reddit {this.state.currentSub }</h1>
-                <Subreddits currentSubreddit={this.state.currentSub} />
+                <Subreddits />
+                <Listings currentSub={this.state.currentSub} />
             </div>
         );
     },

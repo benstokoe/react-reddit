@@ -1,6 +1,6 @@
 var React = require('react'),
-    SubredditItem = require('./SubredditItem.react'),
-    _ = require('underscore');
+    _ = require('underscore'),
+    SubredditItem = require('./SubredditItem.react');
 
 var Subreddit = React.createClass({
     getInitialState: function() {
@@ -31,8 +31,8 @@ var Subreddit = React.createClass({
         }
 
         return (
-            <div>
-                <h4>Subreddits</h4>
+            <div id="subreddits">
+                <h4>Top Subreddits</h4>
                 { subreddits }
             </div>
         );
