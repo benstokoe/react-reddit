@@ -1,5 +1,6 @@
 var React = require('react'),
     Router = require('react-router'),
+    Link = Router.Link,
     RedditApi = require('../Reddit'),
     Subreddits = require('./Subreddits.react'),
     Listings = require('./Listings.react');
@@ -24,7 +25,7 @@ var Reddit = React.createClass({
     render: function() {
         return (
             <div>
-                <h1>Reddit {this.state.currentSub }</h1>
+                <h1><Link to="app">Reddit</Link> {this.state.currentSub }</h1>
                 <Subreddits />
                 <Listings currentSub={this.state.currentSub} key={this.state.currentSub} />
             </div>
