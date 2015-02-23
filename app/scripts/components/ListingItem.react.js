@@ -10,10 +10,12 @@ var ListingItem = React.createClass({
             image = <img src={listing.thumbnail} />;
         }
 
+        var link = "http://reddit.com" + listing.permalink;
+
         return (
             <div className="listing">
                 {image}
-                <p className="title">{listing.title}</p>
+                <a href={link} className="title">{listing.title}</a>
             </div>
         );
     }
